@@ -14,10 +14,7 @@
         }
       },
       "i18n": {
-        "sourceLocale": {
-          "code": "en-US",
-          "baseHref": ""
-        },
+        "sourceLocale": "en-US",
         "locales": {
           "pt-PT": {
             "translation": "src/locale/locale.pt.xlf",
@@ -39,6 +36,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "localize": true,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -51,7 +49,9 @@
           },
           "configurations": {
             "pt": {
-              "localize": ["pt-PT"],
+              "localize": [
+                "pt-PT"
+              ],
               "outputPath": "dist/pt",
               "i18nMissingTranslation": "error"
             },
