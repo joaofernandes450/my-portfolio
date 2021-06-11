@@ -54,7 +54,7 @@ import { FooterComponent } from './footer/footer.component';
     MatDividerModule,
     MatDialogModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'pt-PT' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'en-US' }], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }
