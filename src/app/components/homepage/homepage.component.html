@@ -1,0 +1,272 @@
+<div class="container" style="height: 100%;">
+    <div class="homepage-container" fxLayout="column" fxLayoutAlign="space-between " style="height: 100%;">
+
+        <!-- Opening Section -->
+        <section class="information-section" fxLayout="column" fxLayoutAlign="center center">
+            <div class="info-card" fxFlex="75%" fxLayoutAlign="center center">
+                <mat-card class="mat-elevation-z0">
+                    <mat-card-title>
+                        <h1>João Fernandes</h1>
+                    </mat-card-title>
+                    <mat-card-subtitle>
+                        <h3>Web Developer</h3>
+                    </mat-card-subtitle>
+                    <mat-card-content>
+                        <span class="flag-icon flag-icon-pt" matTooltip="Portugal"></span>
+                    </mat-card-content>
+                    <mat-card-footer style="margin-bottom: 10px;">
+                        <div>
+                            <a href="https://www.linkedin.com/in/joaofernandes450/">
+                                <button mat-icon-button color="primary" matTooltip="LinkedIn"
+                                    matTooltipPosition="below">
+                                    <mat-icon><span class="fab fa-linkedin" aria-hidden="true"></span></mat-icon>
+                                </button>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://github.com/joaofernandes450">
+                                <button mat-icon-button color="primary" matTooltip="GitHub" matTooltipPosition="below">
+                                    <mat-icon><span class="fab fa-github" aria-hidden="true"></span></mat-icon>
+                                </button>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="mailto:joao.fernandesdev@gmail.com">
+                                <button mat-icon-button color="primary" matTooltip="Email" matTooltipPosition="below">
+                                    <mat-icon><span class="fas fa-envelope" aria-hidden="true"></span></mat-icon>
+                                </button>
+                            </a>
+                        </div>
+                    </mat-card-footer>
+                </mat-card>
+            </div>
+            <div>
+                <button class="scroll-section-button" mat-mini-fab color="primary" (click)="scroll(academic)">
+                    <mat-icon>expand_more</mat-icon>
+                </button>
+            </div>
+        </section>
+
+        <!-- Academic Education Section-->
+        <section #academic class="academic-section" fxLayout="column" fxLayoutAlign=" center">
+            <div class="section-container" fxLayout="column" fxLayoutGap="20px">
+                <div class="section-header" fxFlex="10%" fxLayout="column" fxLayoutAlign="center center">
+                    <h1 i18n="education header@@education-header">Education</h1>
+                    <h4 i18n="education subheader@@education-subheader">Current Diplomas/Degree's</h4>
+                </div>
+
+                <div fxLayoutAlign="center center">
+                    <mat-divider class="section-divider"></mat-divider>
+                </div>
+
+                <div class="section-content" fxFlex="" fxLayoutAlign="center center" fxLayout.lt-md="column"
+                    fxLayoutGap="20px">
+                    <mat-card class="example-card" *ngFor="let d of currentDiplomas">
+                        <mat-card-header>
+                            <div mat-card-avatar class="card-avatar"
+                                [ngStyle]="{'background-image':'url(' + d.institutionAvatar + ')'}"
+                                (click)="redirectInstitution(d.institutionURL)"></div>
+                            <mat-card-title i18n="education card header@@education-card-header">{{d.degree}} in
+                                {{d.course}}</mat-card-title>
+                            <mat-card-subtitle class="text-underline-ref"
+                                (click)="redirectInstitution(d.institutionURL)">
+                                {{d.institutionName}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src={{d.institutionPicture}}>
+                        <mat-card-content>
+                            <p>
+                                <b i18n="education card content date@@date-range">From: {{d.startDate |
+                                    date: 'dd/MM/yyyy'}} - To: {{d.endDate | date:
+                                    'dd/MM/yyyy'}}</b>
+                            </p>
+                            <p>
+                                {{d.description}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button i18n="education card actions button@@education-card-actions-button"
+                                mat-raised-button color="warn" (click)="courseInformationRedirect(d.courseURL)">More
+                                Information</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+
+                <div class="scroll-section-button" fxLayoutAlign="center center">
+                    <button mat-mini-fab color="primary" (click)="scroll(experience)">
+                        <mat-icon>expand_more</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section #experience class="experience-section" fxLayout="column" fxLayoutAlign=" center">
+            <div class="section-container" fxLayout="column" fxLayoutGap="20px">
+                <div class="section-header" fxFlex="10%" fxLayout="column" fxLayoutAlign="center center">
+                    <h1 i18n="experience header@@experience-header">Experience</h1>
+                    <h4 i18n="experience subheader@@experience-subheader">Previous Work/Internship</h4>
+                </div>
+
+                <div fxLayoutAlign="center center">
+                    <mat-divider class="section-divider"></mat-divider>
+                </div>
+
+                <div class="section-content" fxFlex="80%" fxLayoutAlign="center center" fxLayout.lt-md="column"
+                    fxLayoutGap="20px">
+                    <mat-card class="example-card" *ngFor="let d of currentExperiences">
+                        <mat-card-header>
+                            <div mat-card-avatar class="card-avatar"
+                                [ngStyle]="{'background-image':'url(' + d.workplaceAvatar + ')'}"
+                                (click)="redirectInstitution(d.workplaceURL)"></div>
+                            <mat-card-title>{{d.position}}</mat-card-title>
+                            <mat-card-subtitle class="text-underline-ref" (click)="redirectInstitution(d.workplaceURL)">
+                                {{d.place}}</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <p>
+                                <b i18n="experience card content date@@date-range">From: {{d.startDate | date:
+                                    'MM/yyyy'}} - To: {{d.endDate | date:
+                                    'MM/yyyy'}}</b>
+                            </p>
+                            <p>
+                                <b i18n="experience card content position@@position">Position: {{d.position}}</b>
+                            </p>
+                            <p>
+                                {{d.description}}
+                            </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <button i18n="experience card actions button@@experience-card-actions-button"
+                                mat-raised-button color="warn" (click)="openDialog(d.projects)">Project
+                                Information</button>
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+
+                <div class="scroll-section-button" fxFlex fxLayoutAlign="center center">
+                    <button mat-mini-fab color="primary" (click)="scroll(technologies)">
+                        <mat-icon>expand_more</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technologies Section-->
+        <section #technologies class="experience-section" fxLayout="column" fxLayoutAlign=" center">
+            <div class="section-container" fxLayout="column" fxLayoutGap="20px">
+                <div class="section-header" fxFlex="10%" fxLayout="column" fxLayoutAlign="center center">
+                    <h1 i18n="technologies header@@technologies-header">Technologies</h1>
+                    <h4 i18n="technologies subheader@@technologies-subheader">Current Knowledge</h4>
+                </div>
+
+                <div fxLayoutAlign="center center">
+                    <mat-divider class="section-divider"></mat-divider>
+                </div>
+
+                <div class="section-content" fxFlex="80%" fxLayout="column" fxLayoutAlign="center " fxLayoutGap="20px">
+                    <div fxLayout fxLayout.lt-md="column">
+                        <mat-card fxFlex *ngFor="let t of currentTech" class="mat-elevation-z0">
+                            <mat-list>
+                                <div mat-subheader>
+                                    {{t.type}}
+                                    <span class="spacer"></span>
+                                    <mat-icon i18n-matTooltip matTooltip="Based on the following scale:&#13;
+                                5: Expert&#13;
+                                4: Professional (Level 1/2/3 + professional experience)&#13;
+                                3: Advanced (Level 1/2 + project experience)&#13;
+                                2: Intermediate (Level 1 + small projects or internships)&#13;
+                                1: Beginner (Academic experience)" [matTooltipClass]="'my-tooltip'">help_outline
+                                    </mat-icon>
+                                </div>
+                                <mat-list-item *ngFor="let p of t.tech">
+                                    <mat-icon matTooltip="{{p.name}}"><i class="{{p.icon}}"
+                                            aria-hidden="true"></i>{{p.helper}}
+                                    </mat-icon>
+                                    <div class="progress-bar-container">
+                                        <mat-progress-bar class="example-margin" mode="determinate" color="warn"
+                                            value="{{p.level * 20}}" matTooltip="{{p.level}}"
+                                            matTooltipPosition="above">
+                                        </mat-progress-bar>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </mat-card>
+                    </div>
+                </div>
+
+                <div class="scroll-section-button" fxLayoutAlign="center center">
+                    <button mat-mini-fab color="primary" (click)="scroll(stack)">
+                        <mat-icon>expand_more</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Favorite Stack Section -->
+        <section #stack class="favorite-stack-section" fxLayout="column" fxLayoutAlign=" center">
+            <div class="section-container" fxLayout="column" fxLayoutGap="20px">
+                <div class="section-header" fxFlex="10%" fxLayout="column" fxLayoutAlign="center center">
+                    <h1 i18n="favorite stack header@@favorite-stack-header">Favorite Stack</h1>
+                    <h4 i18n="favorite stack subheader@@favorite-stack-subheader">Personal Choice</h4>
+                </div>
+
+                <div fxLayoutAlign="center center">
+                    <mat-divider class="section-divider"></mat-divider>
+                </div>
+
+                <div class="section-content" fxFlex fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+                    <div fxLayout fxFlex fxLayout.lt-md="column" fxLayoutAlign="center center">
+                        <div class="favorite-stack-container" fxLayout fxLayoutAlign="space-evenly center"
+                            fxLayout.lt-md="column">
+                            <div>
+                                <img src="../../../assets/images/Angular.png">
+                            </div>
+                            <mat-divider></mat-divider>
+                            <div>
+                                <img src="../../../assets/images/nodejs.jpg">
+                            </div>
+                            <mat-divider></mat-divider>
+                            <div>
+                                <img src="../../../assets/images/mongodb.webp">
+                            </div>
+                        </div>
+                        <div fxFlex fxLayout="column" fxLayoutAlign="space-around center">
+                            <p i18n="favorite-stack-description@@fav-stack-description">
+                                Since I had my first contact with web development and consequently with the technologies
+                                above
+                                represented, around my third year of graduation to be precise, that I have choosen to
+                                stick
+                                with
+                                them in both academic and personal projects.
+                            </p>
+                            <p i18n="favorite-stack-angular-description@@fav-stack-angular-description">
+                                Angular was and remains a simple but rather strong framework that allows me to design
+                                and
+                                develop all of my SPAs in the best way possible. With the introduction of Angular Material and its strong ongoing
+                                development, with new versions being pushed regurlary, that I see no motives to move on.
+                            </p>
+                            <p i18n="favorite-stack-node-description@@fav-stack-node-description">
+                                Node.js was at the time the chosen backend framework lectured and paired with Angular in
+                                our
+                                web development. Thanks to its flexibility, scalability and with NPM around I feel that
+                                Node.js is the best all around option for my backend development.
+                            </p>
+                            <p i18n="favorite-stack-mongo-description@@fav-stack-mongo-description">
+                                MongoDB at the time represented a new concept of mechanism of storage and retrieval of
+                                data, since it wasn't based on the common relational databases. But soon enough I found
+                                how
+                                powerful
+                                and fast MongoDB was. Plus the ease of communication between MongoDB and Node.js, using
+                                documents
+                                with structure similar to JSON, is a big plus.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <app-footer></app-footer>
+        </footer>
+    </div>
+</div>

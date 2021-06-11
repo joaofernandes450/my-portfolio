@@ -13,6 +13,18 @@
           "strict": true
         }
       },
+      "i18n": {
+        "sourceLocale": {
+          "code": "en-US",
+          "baseHref": ""
+        },
+        "locales": {
+          "pt-PT": {
+            "translation": "src/locale/locale.pt.xlf",
+            "baseHref": "/pt"
+          }
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -26,17 +38,23 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
+            "localize": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
+            "pt": {
+              "localize": ["pt-PT"],
+              "outputPath": "dist/pt",
+              "i18nMissingTranslation": "error"
+            },
             "production": {
               "budgets": [
                 {
@@ -77,6 +95,14 @@
             },
             "development": {
               "browserTarget": "my-portfolio:build:development"
+            },
+            "pt": {
+              "browserTarget": "my-portfolio:build:pt",
+              "port": 4200
+            },
+            "en": {
+              "browserTarget": "my-portfolio:build:en",
+              "port": 4201
             }
           },
           "defaultConfiguration": "development"

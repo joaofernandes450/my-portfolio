@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="pt-PT" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="education-header" datatype="html">
+        <source>Education</source>
+        <target>Educação</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <note priority="1" from="description">education header</note>
+      </trans-unit>
+      <trans-unit id="education-subheader" datatype="html">
+        <source>Current Diplomas/Degree&apos;s</source>
+        <target>Diplomas</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+        <note priority="1" from="description">education subheader</note>
+      </trans-unit>
+      <trans-unit id="education-card-header" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{d.degree}}"/> in <x id="INTERPOLATION_1" equiv-text="{{d.course}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">69,70</context>
+        </context-group>
+        <note priority="1" from="description">education card header</note>
+      </trans-unit>
+      <trans-unit id="date-range" datatype="html">
+        <source>From: <x id="INTERPOLATION" equiv-text="{{d.startDate |
+                                    date: &apos;dd/MM/yyyy&apos;}}"/> - To: <x id="INTERPOLATION_1" equiv-text="{{d.endDate | date:
+                                    &apos;dd/MM/yyyy&apos;}}"/></source>
+        <target>Desde: <x id="INTERPOLATION" equiv-text="{{d.startDate |
+                                    date: &apos;dd/MM/yyyy&apos;}}"/> - Até: <x id="INTERPOLATION_1" equiv-text="{{d.endDate | date:
+                                    &apos;dd/MM/yyyy&apos;}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">78,80</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">127,129</context>
+        </context-group>
+        <note priority="1" from="description">education card content date</note>
+      </trans-unit>
+      <trans-unit id="education-card-actions-button" datatype="html">
+        <source>More Information</source>
+        <target>Mais Informações</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">88,89</context>
+        </context-group>
+        <note priority="1" from="description">education card actions button</note>
+      </trans-unit>
+      <trans-unit id="experience-header" datatype="html">
+        <source>Experience</source>
+        <target>Experiência</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+        <note priority="1" from="description">experience header</note>
+      </trans-unit>
+      <trans-unit id="experience-subheader" datatype="html">
+        <source>Previous Work/Internship</source>
+        <target>Trabalhos Anteriores/Estágios</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+        <note priority="1" from="description">experience subheader</note>
+      </trans-unit>
+      <trans-unit id="position" datatype="html">
+        <source>Position: <x id="INTERPOLATION" equiv-text="{{d.position}}"/></source>
+        <target>Posição: <x id="INTERPOLATION" equiv-text="{{d.position}}"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">132</context>
+        </context-group>
+        <note priority="1" from="description">experience card content position</note>
+      </trans-unit>
+      <trans-unit id="experience-card-actions-button" datatype="html">
+        <source>Project Information</source>
+        <target>Detalhes do Projeto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">140,141</context>
+        </context-group>
+        <note priority="1" from="description">experience card actions button</note>
+      </trans-unit>
+      <trans-unit id="technologies-header" datatype="html">
+        <source>Technologies</source>
+        <target>Tecnologias</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">158</context>
+        </context-group>
+        <note priority="1" from="description">technologies header</note>
+      </trans-unit>
+      <trans-unit id="technologies-subheader" datatype="html">
+        <source>Current Knowledge</source>
+        <target>Conhecimento Atual</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+        <note priority="1" from="description">technologies subheader</note>
+      </trans-unit>
+      <trans-unit id="931658229087306417" datatype="html">
+        <source>Based on the following scale:
+                                5: Expert
+                                4: Professional (Level 1/2/3 + professional experience)
+                                3: Advanced (Level 1/2 + project experience)
+                                2: Intermediate (Level 1 + small projects or internships)
+                                1: Beginner (Academic experience)</source>
+        <target>Baseado na seguinte escala:
+                                5: Especialista
+                                4: Profissional (Nível 1/2/3 + experiência profissional)
+                                3: Avançado (Nível 1/2 + experiência em projetos)
+                                2: Intermédio (Nível 1 + projetos de pequena dimensão ou estágios)
+                                1: Iniciante (Experiência acadêmica)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">173,178</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="favorite-stack-header" datatype="html">
+        <source>Favorite Stack</source>
+        <target>Stack Tecnológica Preferida</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">209</context>
+        </context-group>
+        <note priority="1" from="description">favorite stack header</note>
+      </trans-unit>
+      <trans-unit id="favorite-stack-subheader" datatype="html">
+        <source>Personal Choice</source>
+        <target>Escolha Pessoal</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">210</context>
+        </context-group>
+        <note priority="1" from="description">favorite stack subheader</note>
+      </trans-unit>
+      <trans-unit id="fav-stack-description" datatype="html">
+        <source> Since I had my first contact with web development and consequently with the technologies above represented, around my third year of graduation to be precise, that I have choosen to stick with them in both academic and personal projects. </source>
+        <target> Desde o meu primeiro contato em desenvolvimento web e consequentemente com as tecnologias acima mencionadas, por volta do meu terceiro ano da licenciatura, que decidi leva-las comigo em projectos academicos e profissionais.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">235,241</context>
+        </context-group>
+        <note priority="1" from="description">favorite-stack-description</note>
+      </trans-unit>
+      <trans-unit id="fav-stack-angular-description" datatype="html">
+        <source> Angular was and remains a simple but rather strong framework that allows me to design and develop all of my SPAs in the best way possible. With the introduction of Angular Material and its strong ongoing development, with new versions being pushed regurlary, that I see no motives to move on. </source>
+        <target> Angular foi e continua a ser uma framework simples, mas bastante forte que me permite desenhar e desenvolver todas as minhas SPAs da melhor maneira possível. Com a introdução do Angular Material e o seu desenvolvimento contínuo, com novas versões lançadas regularmente, que não vejo motivos para procurar uma nova framework</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">243,247</context>
+        </context-group>
+        <note priority="1" from="description">favorite-stack-angular-description</note>
+      </trans-unit>
+      <trans-unit id="fav-stack-node-description" datatype="html">
+        <source> Node.js was at the time the chosen backend framework lectured and paired with Angular in our web development. Thanks to its flexibility, scalability and with NPM around I feel that Node.js is the best all around option for my backend development. </source>
+        <target> Na época o Node.js era a framework lecionada e emparalherada com o Angular no desenvolviment web. Graças à sua flexibilidade, escalabilidade e com a existência do NPM, sinto que o Node.js é a melhor opção para todo o meu desenvolvimento de backend.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">249,253</context>
+        </context-group>
+        <note priority="1" from="description">favorite-stack-node-description</note>
+      </trans-unit>
+      <trans-unit id="fav-stack-mongo-description" datatype="html">
+        <source> MongoDB at the time represented a new concept of mechanism of storage and retrieval of data, since it wasn&apos;t based on the common relational databases. But soon enough I found how powerful and fast MongoDB was. Plus the ease of communication between MongoDB and Node.js, using documents with structure similar to JSON, is a big plus.</source>
+        <target> Num primeiro contacto o MongoDB representava um novo conceito de mecanismos para o armazenamento e consulta de dados, dado que este não era baseado nas tradicionais base de dados relacionais. Mas rapidamente descobri como o MongoDB era uma ferramente poderosa e bastante rápida. Além disso, a facilidade de comunicação entre o MongoDB e o Node.js, visto que os seus documentos utilizam estruturas semelhantes a JSON, traz uma grande vantagem para a sua adoção.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
+          <context context-type="linenumber">255,261</context>
+        </context-group>
+        <note priority="1" from="description">favorite-stack-mongo-description</note>
+      </trans-unit>
+      <trans-unit id="dialog-header" datatype="html">
+        <source>Context</source>
+        <target>Contexto</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dialog/dialog.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">dialog context header</note>
+      </trans-unit>
+      <trans-unit id="dialog-activities" datatype="html">
+        <source>Activities</source>
+        <target>Atividades</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dialog/dialog.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">dialog activities list</note>
+      </trans-unit>
+      <trans-unit id="dialog-technologies" datatype="html">
+        <source>Technologies</source>
+        <target>Tecnologias</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dialog/dialog.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">dialog technologies list</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,21 @@
+.technologies-list {
+    -webkit-columns: 3;
+    -moz-columns: 3;
+    columns: 3;
+}
+
+@media screen and (max-width: 1024px) {
+    .technologies-list {
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        columns: 2;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .technologies-list {
+        -webkit-columns: 1;
+        -moz-columns: 1;
+        columns: 1;
+    }
+}

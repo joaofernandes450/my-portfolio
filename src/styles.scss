@@ -1,4 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import "~@fortawesome/fontawesome-free/css/all.css";
+$fa-fort-path: "~@fontawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome";
+@import "~@fortawesome/fontawesome-free/scss/regular";
+@import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/brands";
+
+$flag-icon-css-path: '~flag-icon-css/flags' !default;
+@import "~flag-icon-css/sass/flag-icon";
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;1,800&display=swap');
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Open Sans', sans-serif; }
+
+section {
+    min-height: 100vh;
+    /* mobile viewport bug fix */
+    min-height: -webkit-fill-available;
+    padding: 50px 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+    section {
+        min-height: auto;
+        padding: 50px 0 0;
+    }
+
+    .information-section {
+        min-height: 100vh !important;
+    }
+
+    .scroll-section-button{
+        visibility: hidden;
+    }
+}
+
+.section-container {
+    height: 100%;
+    max-height: 100%;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.my-tooltip {
+    white-space: pre-line;
+}
+
+.section-divider {
+    width: 90%;
+    background-color: #673ab7;
+}
+
+.text-underline-ref:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.scroll-section-button {
+    margin-bottom: 20px;
+}

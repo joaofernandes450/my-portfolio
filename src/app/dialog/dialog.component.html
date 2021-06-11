@@ -1,0 +1,24 @@
+<h2 mat-dialog-title>{{projectInfo.title}}</h2>
+<mat-dialog-content class="mat-typography" style="white-space: pre-line">
+    <img src="{{projectInfo.imageURL}}" style="height: auto; width: 100%;">
+
+    <h2 i18n="dialog context header@@dialog-header">Context</h2>
+    <p>{{projectInfo.description}}</p>
+
+    <div>
+        <h2 i18n="dialog activities list@@dialog-activities">Activities</h2>
+        <mat-list>
+            <mat-list-item *ngFor="let i of projectInfo.activities" style="font-size: 14px;">
+                {{i}};
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div>
+        <h2 i18n="dialog technologies list@@dialog-technologies">Technologies</h2>
+        <mat-list class="technologies-list">
+            <mat-list-item *ngFor="let i of projectInfo.technologies" style="font-size: 14px;">
+                <p>{{i}};</p>
+            </mat-list-item>
+        </mat-list>
+    </div>
+</mat-dialog-content>
