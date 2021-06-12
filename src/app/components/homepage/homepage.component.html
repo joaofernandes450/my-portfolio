@@ -2,8 +2,8 @@
     <div class="homepage-container" fxLayout="column" fxLayoutAlign="space-between " style="height: 100%;">
 
         <!-- Opening Section -->
-        <section class="information-section" fxLayout="column" fxLayoutAlign="center center">
-            <div class="info-card" fxFlex="75%" fxLayoutAlign="center center">
+        <section class="information-section" fxLayout="column" fxLayoutAlign=" center" fxLayoutGap="20px">
+            <div class="info-card" fxFlex="" fxLayoutAlign="center center">
                 <mat-card class="mat-elevation-z0">
                     <mat-card-title>
                         <h1>João Fernandes</h1>
@@ -40,8 +40,8 @@
                     </mat-card-footer>
                 </mat-card>
             </div>
-            <div>
-                <button class="scroll-section-button" mat-mini-fab color="primary" (click)="scroll(academic)">
+            <div class="first-scroll-section-button">
+                <button mat-mini-fab color="primary" (click)="scroll(academic)">
                     <mat-icon>expand_more</mat-icon>
                 </button>
             </div>
@@ -91,7 +91,7 @@
                     </mat-card>
                 </div>
 
-                <div class="scroll-section-button" fxFlex fxLayoutAlign="center center">
+                <div class="scroll-section-button" fxLayoutAlign="center center">
                     <button mat-mini-fab color="primary" (click)="scroll(experience)">
                         <mat-icon>expand_more</mat-icon>
                     </button>
@@ -218,21 +218,21 @@
                 <div class="section-content" fxFlex fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
                     <div fxFlex fxLayout="column" fxLayoutAlign="space-around stretch" fxLayout.lt-md="column"
                         fxLayoutAlign.lt-md="column column">
-                        <div class="favorite-stack-container" fxLayout fxLayoutAlign="space-evenly center"
+                        <div class="favorite-stack-container" fxLayout fxLayoutAlign="center center" fxLayoutGap="20px"
                             fxLayout.lt-md="column">
                             <div>
                                 <img src="assets/images/Angular.png">
                             </div>
                             <mat-divider></mat-divider>
                             <div>
-                                <img src="assets/images/nodejs.jpg">
+                                <img src="assets/images/Nodejs_logo.png">
                             </div>
                             <mat-divider></mat-divider>
                             <div>
                                 <img src="assets/images/mongo.png">
                             </div>
                         </div>
-                        <div fxFlex="40%" fxLayout="column" fxLayoutAlign="space-around center" fxFlex.lt-md="">
+                        <div fxFlex="40%" fxLayout="column" fxLayoutAlign="center center" fxFlex.lt-md="">
                             <p i18n="favorite-stack-description@@fav-stack-description">
                                 Since I had my first contact with web development and consequently with the technologies
                                 represented, around my third year of graduation to be precise, that I have choosen to

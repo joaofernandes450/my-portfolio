@@ -147,7 +147,7 @@
       </trans-unit>
       <trans-unit id="fav-stack-description" datatype="html">
         <source> Since I had my first contact with web development and consequently with the technologies represented, around my third year of graduation to be precise, that I have choosen to stick with them in both academic and personal projects. </source>
-        <target> Desde o meu primeiro contato em desenvolvimento web e consequentemente com as tecnologias representadas, por volta do meu terceiro ano da licenciatura, que decidi leva-las comigo em projectos academicos e profissionais.</target>
+        <target> Desde o meu primeiro contato em desenvolvimento web e consequentemente com as tecnologias representadas, por volta do meu terceiro ano da licenciatura, que decidi levá-las comigo em projectos academicos e profissionais.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
           <context context-type="linenumber">235,241</context>

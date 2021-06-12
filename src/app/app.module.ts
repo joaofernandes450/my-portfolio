@@ -33,6 +33,9 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
 import { DialogComponent } from './components/dialog/dialog.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -41,7 +44,8 @@ import { FooterComponent } from './components/footer/footer.component';
     HomepageComponent,
     NavigationBarComponent,
     DialogComponent,
-    FooterComponent
+    FooterComponent,
+    SidenavComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,9 @@ import { FooterComponent } from './components/footer/footer.component';
     MatGridListModule,
     MatProgressBarModule,
     MatDividerModule,
-    MatDialogModule
+    MatDialogModule,
+    LayoutModule,
+    MatSidenavModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: getCurentLocale() }],
   bootstrap: [AppComponent]

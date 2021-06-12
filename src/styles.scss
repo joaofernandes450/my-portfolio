@@ -19,13 +19,15 @@ section {
     min-height: 100vh;
     /* mobile viewport bug fix */
     min-height: -webkit-fill-available;
-    padding: 50px 0 0;
+    padding: 100px 0 0;
+    position: relative;
 }
 
 @media screen and (max-width: 1024px) {
     section {
         min-height: auto;
-        padding: 50px 0 0;
+        padding: 100px 0 0;
+        position: relative;
     }
 
     .information-section {
@@ -37,7 +39,7 @@ section {
     }
 
     .scroll-section-button{
-        visibility: hidden;
+        visibility: visible;
     }
 }
 
@@ -64,8 +66,12 @@ section {
     text-decoration: underline;
 }
 
+.first-scroll-section-button {
+    margin-bottom: 70px;
+}
+
 .scroll-section-button {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 mat-card {

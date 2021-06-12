@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild, ViewChildren } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/components/dialog/dialog.component';
 
@@ -71,7 +71,7 @@ export class HomepageComponent implements OnInit {
       degree: [{ locale: 'en', text: "Master's Degree" }, { locale: 'pt', text: "Mestrado" }],
       course: [{ locale: 'en', text: "Software Engineering" }, { locale: 'pt', text: "Engenharia de Software" }],
       startDate: new Date('10/01/2018'), endDate: new Date('10/31/2020'),
-      institutionAvatar: "https://recipp.ipp.pt/retrieve/31671", institutionPicture: "https://cdn-static-new.uniplaces.com/colleges/16/05-edificio-principal.jpg", institutionName: "Instituto Superior de Engenharia do Porto",
+      institutionAvatar: "assets/images/isep_avatar.png", institutionPicture: "assets/images/isep.jpg", institutionName: "Instituto Superior de Engenharia do Porto",
       description: [{ locale: 'en', text: "Master's degree specialize in Software Engineering with a duration of 2 years, consisting of 11 different curricular units, focused on software architecture and quality, as well as software innovation and team enviroment." },
       { locale: 'pt', text: "Mestrado em Engenharia de Software com uma duração de 2 anos, constituido por 11 unidades curriculares diferentes, focado na arquitetura de software e na qualidade de software, mas também na inovação de software e no ambiente de equipa." }],
       institutionURL: "https://www.isep.ipp.pt", courseURL: "https://www.isep.ipp.pt/Course/Course/87"
@@ -80,7 +80,7 @@ export class HomepageComponent implements OnInit {
       degree: [{ locale: 'en', text: "Bachelor Degree" }, { locale: 'pt', text: "Licenciatura" }],
       course: [{ locale: 'en', text: "Computer Engineering" }, { locale: 'pt', text: "Engenharia Informática" }],
       startDate: new Date('09/01/2015'), endDate: new Date('09/30/2018'),
-      institutionAvatar: "https://recipp.ipp.pt/retrieve/31671", institutionPicture: "https://cdn-static-new.uniplaces.com/colleges/16/05-edificio-principal.jpg", institutionName: "Instituto Superior de Engenharia do Porto",
+      institutionAvatar: "assets/images/isep_avatar.png", institutionPicture: "assets/images/isep.jpg", institutionName: "Instituto Superior de Engenharia do Porto",
       description: [{ locale: 'en', text: "Bachelor Degree in Computer Engineering with a duration of 3 years, consisting of 30 different curricular units, focused on the development of computer software, information systems, network administration and security and data processing." },
       { locale: 'pt', text: "Licenciatura em Engenharia Informática com uma duração de 3 anos, constituída por 30 unidades curriculares diferentes, focada no desenvolvimento de software, sistemas de informação, administração de redes e na segurança e processamento de dados." }],
       institutionURL: "https://www.isep.ipp.pt", courseURL: "https://www.isep.ipp.pt/Course/Course/26"
@@ -119,21 +119,21 @@ export class HomepageComponent implements OnInit {
       type: [{ locale: 'en', text: "Master's Degree Internship" }, { locale: 'pt', text: "Estágio de Mestrado" }], place: 'Instituto Superior de Engenharia do Porto',
       position: "Full Stack Web Developer", startDate: new Date('02/01/2020'), endDate: new Date('10/01/2020'),
       description: [{ locale: 'en', text: "Masters internship focused on the reengineering of “eGYM – Engineer's Gym” developed in 2018." },
-      { locale: 'pt', text: "Estágio de Mestrado focado na reengenharia do sistema “eGYM – Engineer's Gym” já desenvolvido em 2018 na Licenciatura. " }], workplaceAvatar: "https://recipp.ipp.pt/retrieve/31671", workplaceURL: "https://www.isep.ipp.pt",
+      { locale: 'pt', text: "Estágio de Mestrado focado na reengenharia do sistema “eGYM – Engineer's Gym” já desenvolvido em 2018 na Licenciatura. " }], workplaceAvatar: "assets/images/isep_avatar.png", workplaceURL: "https://www.isep.ipp.pt",
       projects: this.projects[0]
     },
     {
       type: [{ locale: 'en', text: "Summer Internship" }, { locale: 'pt', text: 'Estágio de Verão' }], place: 'Continental Mabor',
       position: 'Full Stack Web Developer', startDate: new Date('06/01/2018'), endDate: new Date('08/01/2018'),
       description: [{ locale: 'en', text: "Short Summer internship, focused on smaller scale internal projects, with the intentional of gaining professional experience." },
-      { locale: 'pt', text: "Pequeno estágio de Verão, com um foco em projetos internos de menor escala, com a intenção de adquirir experência profissional." }], workplaceAvatar: "https://pbs.twimg.com/profile_images/1065885011851780096/AXxPjeP4_400x400.jpg", workplaceURL: "https://www.continental.com/",
+      { locale: 'pt', text: "Pequeno estágio de Verão, com um foco em projetos internos de menor escala, com a intenção de adquirir experência profissional." }], workplaceAvatar: "assets/images/continental_avatar.jpg", workplaceURL: "https://www.continental.com/",
       projects: this.projects[1]
     },
     {
       type: [{ locale: 'en', text: "Bachelor's Degree Internship" }, { locale: 'pt', text: "Estágio da Licenciatura" }], place: 'Instituto Superior de Engenharia do Porto',
       position: "Full Stack Web Developer", startDate: new Date('02/01/2018'), endDate: new Date('09/01/2018'),
       description: [{ locale: 'en', text: "nternship of the Degree, that paved way for the creation of a new and ambitious project called “eGYM – Engineer's Gym”." },
-      { locale: 'pt', text: "Estágio da Licenciatura, que abriu caminho à criação de um novo e ambicioso projeto denominado de “eGYM – Engineer's Gym”." }], workplaceAvatar: "https://recipp.ipp.pt/retrieve/31671", workplaceURL: "https://www.isep.ipp.pt",
+      { locale: 'pt', text: "Estágio da Licenciatura, que abriu caminho à criação de um novo e ambicioso projeto denominado de “eGYM – Engineer's Gym”." }], workplaceAvatar: "assets/images/isep_avatar.png", workplaceURL: "https://www.isep.ipp.pt",
       projects: this.projects[2]
     }
   ]
@@ -180,6 +180,10 @@ export class HomepageComponent implements OnInit {
     { type: [{ locale: 'en', text: 'Operating Systems' }, { locale: 'pt', text: "Sistemas Operativos" }], tech: this.operatingSystemsTechnologies },
   ]
 
+  @ViewChild('academic') education!: ElementRef;
+  @ViewChild('experience') experience!: ElementRef;
+  @ViewChild('technologies') technologies!: ElementRef;
+  @ViewChild('stack') favStack!: ElementRef;
   constructor(public dialog: MatDialog, @Inject(LOCALE_ID) locale: string) {
     this.locale = locale;
   }
@@ -221,7 +225,32 @@ export class HomepageComponent implements OnInit {
   }
 
   scroll(element: HTMLElement): void {
-    element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  scrollFromNav(section: string): void {
+    switch (section) {
+      case 'Education':
+      case 'Educação': {
+        this.scroll(this.education.nativeElement);
+        break;
+      }
+      case 'Experience':
+      case 'Experiência': {
+        this.scroll(this.experience.nativeElement);
+        break;
+      }
+      case 'Technologies':
+      case 'Tecnologias': {
+        this.scroll(this.technologies.nativeElement);
+        break;
+      }
+      case 'Favorite Stack':
+      case 'Stack Favorita': {
+        this.scroll(this.favStack.nativeElement);
+        break;
+      }
+    }
   }
 
   getDegree(d: Diplomas): string {
@@ -242,6 +271,11 @@ export class HomepageComponent implements OnInit {
 
   getTechType(t: TechnologiesGroup): string {
     return t.type.find(x => x.locale === this.locale)!.text;
+  }
+
+  teste(section: string): void {
+    console.log("entrei")
+    this.scroll(this.experience.nativeElement);
   }
 
 }
