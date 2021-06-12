@@ -16,12 +16,12 @@
       "i18n": {
         "sourceLocale": {
           "code": "en",
-          "baseHref": "https://joaofernandes450.github.io/my-portfolio/en"
+          "baseHref": "/https://joaofernandes450.github.io/my-portfolio/en"
         },
         "locales": {
           "pt": {
             "translation": "src/locale/locale.pt.xlf",
-            "baseHref": "https://joaofernandes450.github.io/my-portfolio/pt"
+            "baseHref": "/https://joaofernandes450.github.io/my-portfolio/pt"
           }
         }
       },

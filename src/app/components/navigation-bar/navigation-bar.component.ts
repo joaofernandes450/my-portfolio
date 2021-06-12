@@ -34,7 +34,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   downloadCV() {
-    window.open('/assets/Joao_Fernandes_CV.pdf', '_blank');
+    window.open('/src/assets/Joao_Fernandes_CV.pdf', '_blank');
   }
 
   changeLanguage(locale: any): void {
