@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from 'src/app/dialog/dialog.component';
+import { DialogComponent } from 'src/app/components/dialog/dialog.component';
 
 export interface LangTranslation {
   locale: string,

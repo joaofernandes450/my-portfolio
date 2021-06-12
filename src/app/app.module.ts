@@ -31,8 +31,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 // Components
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { NavigationBarComponent } from './components/navigation-bar/navigation-bar.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { FooterComponent } from './footer/footer.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({

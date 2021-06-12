@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Project } from '../components/homepage/homepage.component';
+import { Project } from '../homepage/homepage.component';
 
 @Component({
   selector: 'app-dialog',
