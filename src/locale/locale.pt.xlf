@@ -165,7 +165,7 @@
       </trans-unit>
       <trans-unit id="fav-stack-node-description" datatype="html">
         <source> Node.js was at the time the chosen backend framework lectured and paired with Angular in our web development. Thanks to its flexibility, scalability and with NPM around I feel that Node.js is the best all around option for my backend development. </source>
-        <target> Na época o Node.js era a framework lecionada e emparalherada com o Angular no desenvolviment web. Graças à sua flexibilidade, escalabilidade e com a existência do NPM, sinto que o Node.js representa até hoje a melhor escolha para todo o meu desenvolvimento de backend.</target>
+        <target> Na época o Node.js era foi framework lecionada e emparalherada com o Angular no desenvolviment web. Graças à sua flexibilidade, escalabilidade e com a existência do NPM, sinto que o Node.js representa até hoje a melhor escolha para todo o meu desenvolvimento de backend.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
           <context context-type="linenumber">249,253</context>

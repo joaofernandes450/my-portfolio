@@ -63,3 +63,17 @@ section {
 .scroll-section-button {
     margin-bottom: 20px;
 }
+
+mat-card {
+    display: flex !important;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+  
+mat-card-content {
+    display: flex !important;
+    flex-direction: column;
+    place-items: center;
+    align-items: center;
+    height: 100%;
+}

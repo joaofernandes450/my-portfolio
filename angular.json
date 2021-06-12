@@ -53,7 +53,7 @@
           "configurations": {
             "pt": {
               "localize": [
-                "pt-PT"
+                "pt"
               ],
               "outputPath": "dist/pt",
               "i18nMissingTranslation": "error"
