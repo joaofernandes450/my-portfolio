@@ -21,8 +21,8 @@ export class NavigationBarComponent implements OnInit {
   private locale: string = '';
 
   languagesAvailable: Language[] = [
-    { locale: 'en', name: "English", flag: "flag-icon flag-icon-gb", selected: false, href: "/en" },
-    { locale: 'pt', name: "Portuguese", flag: "flag-icon flag-icon-pt", selected: false, href: "/pt" }
+    { locale: 'en', name: "English", flag: "flag-icon flag-icon-gb", selected: false, href: "en" },
+    { locale: 'pt', name: "Portuguese", flag: "flag-icon flag-icon-pt", selected: false, href: "pt" }
   ]
 
   constructor(@Inject(LOCALE_ID) locale: string) {
@@ -34,7 +34,7 @@ export class NavigationBarComponent implements OnInit {
   }
 
   downloadCV() {
-    window.open('/src/assets/Joao_Fernandes_CV.pdf', '_blank');
+    window.open('assets/Joao_Fernandes_CV.pdf', '_blank');
   }
 
   changeLanguage(locale: any): void {
