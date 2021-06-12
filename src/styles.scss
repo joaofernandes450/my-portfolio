@@ -32,6 +32,10 @@ section {
         min-height: 100vh !important;
     }
 
+    .container {
+        height: auto !important;
+    }
+
     .scroll-section-button{
         visibility: hidden;
     }
