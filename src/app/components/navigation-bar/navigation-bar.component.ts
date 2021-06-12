@@ -55,8 +55,8 @@ export class NavigationBarComponent implements OnInit {
       this.sectionSelection = this.sections.find(x => x.locale === this.locale)!.sections;
     } else {
       this.languagesAvailable.find(x => x.locale != this.locale)!.selected = true;
+      this.sectionSelection = this.sections.find(x => x.locale != this.locale)!.sections;
       localStorage.setItem('Language', locale);
-      this.sectionSelection = this.sections.find(x => x.locale === this.locale)!.sections;
     }
   }
 
