@@ -13,7 +13,7 @@ export class DialogComponent implements OnInit {
   breakpoint: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    this.projectInfo = data.project;
+    this.projectInfo = data;
   }
 
   ngOnInit() {

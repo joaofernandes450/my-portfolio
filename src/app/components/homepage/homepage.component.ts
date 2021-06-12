@@ -1,35 +1,45 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, LOCALE_ID, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from 'src/app/dialog/dialog.component';
 
+export interface LangTranslation {
+  locale: string,
+  text: string
+}
+
+export interface LangTranslationMultiple {
+  locale: string,
+  text: string[]
+}
+
 export interface Diplomas {
-  degree: string,
-  course: string,
+  degree: LangTranslation[],
+  course: LangTranslation[],
   startDate: Date,
   endDate: Date,
   institutionAvatar: string,
   institutionPicture: string,
   institutionName: string,
-  description: string,
+  description: LangTranslation[],
   institutionURL: string,
   courseURL: string
 }
 
 export interface Project {
-  title: string,
+  title: LangTranslation[],
   imageURL?: string,
-  description: string,
-  activities: string[],
+  description: LangTranslation[],
+  activities: LangTranslationMultiple[],
   technologies: string[]
 }
 
 export interface Experience {
-  type: string,
+  type: LangTranslation[],
   place: string,
   position: string,
   startDate: Date,
   endDate: Date,
-  description: string,
+  description: LangTranslation[],
   workplaceAvatar: string,
   workplaceURL: string,
   projects: Project
@@ -43,7 +53,7 @@ export interface Technologies {
 }
 
 export interface TechnologiesGroup {
-  type: string,
+  type: LangTranslation[],
   tech: Technologies[]
 }
 
@@ -54,56 +64,76 @@ export interface TechnologiesGroup {
 })
 export class HomepageComponent implements OnInit {
 
+  locale: string;
+
   currentDiplomas: Diplomas[] = [
     {
-      degree: 'Master Degree', course: 'Software Engineering', startDate: new Date('10/01/2018'), endDate: new Date('10/31/2020'),
+      degree: [{ locale: 'en', text: "Master's Degree" }, { locale: 'pt', text: "Mestrado" }],
+      course: [{ locale: 'en', text: "Software Engineering" }, { locale: 'pt', text: "Engenharia de Software" }],
+      startDate: new Date('10/01/2018'), endDate: new Date('10/31/2020'),
       institutionAvatar: "https://recipp.ipp.pt/retrieve/31671", institutionPicture: "https://cdn-static-new.uniplaces.com/colleges/16/05-edificio-principal.jpg", institutionName: "Instituto Superior de Engenharia do Porto",
-      description: "Master's degree specialize in Software Engineering with a duration of 2 years, consisting of 11 different curricular units, focused on software architecture and software quality as well as software innovation and team enviroment.",
+      description: [{ locale: 'en', text: "Master's degree specialize in Software Engineering with a duration of 2 years, consisting of 11 different curricular units, focused on software architecture and quality, as well as software innovation and team enviroment." },
+      { locale: 'pt', text: "Mestrado em Engenharia de Software com uma duração de 2 anos, constituido por 11 unidades curriculares diferentes, focado na arquitetura de software e na qualidade de software, mas também na inovação de software e no ambiente de equipa." }],
       institutionURL: "https://www.isep.ipp.pt", courseURL: "https://www.isep.ipp.pt/Course/Course/87"
     },
     {
-      degree: 'Bachelor Degree', course: 'Computer Engineering', startDate: new Date('09/01/2015'), endDate: new Date('09/30/2018'),
+      degree: [{ locale: 'en', text: "Bachelor Degree" }, { locale: 'pt', text: "Licenciatura" }],
+      course: [{ locale: 'en', text: "Computer Engineering" }, { locale: 'pt', text: "Engenharia Informática" }],
+      startDate: new Date('09/01/2015'), endDate: new Date('09/30/2018'),
       institutionAvatar: "https://recipp.ipp.pt/retrieve/31671", institutionPicture: "https://cdn-static-new.uniplaces.com/colleges/16/05-edificio-principal.jpg", institutionName: "Instituto Superior de Engenharia do Porto",
-      description: "Bachelor Degree with a duration of 3 years, consisting of 30 different curricular units, focused on the development of computer software, information systems, network administration and security and data processing.",
+      description: [{ locale: 'en', text: "Bachelor Degree in Computer Engineering with a duration of 3 years, consisting of 30 different curricular units, focused on the development of computer software, information systems, network administration and security and data processing." },
+      { locale: 'pt', text: "Licenciatura em Engenharia Informática com uma duração de 3 anos, constituída por 30 unidades curriculares diferentes, focada no desenvolvimento de software, sistemas de informação, administração de redes e na segurança e processamento de dados." }],
       institutionURL: "https://www.isep.ipp.pt", courseURL: "https://www.isep.ipp.pt/Course/Course/26"
     }
   ]
 
   projects: Project[] = [
     {
-      title: "eGYM: Engineer's Gym", imageURL: "/assets/images/eGYM Languages.png",
-      description: "Reengineering of the previous “eGYM – Engineer's Gym” developed in 2018, aiming to achieve a better and more robust Learning Management System (LMS), allowing the possibility to integrate new concepts and new functionalities that could eliminate limitations from previous systems and met the new objectives proposed.\n\nContrary to the previous application developed in 2018, all services and micro- services were deployed on a local Linux client, provided by Instituto Superior de Engenharia do Porto, using the institution DNS",
-      activities: ["Analysis and architecture reengineering", "Web Development", "Database handling and maintenance", "Cloud implementation (Internal Linux Server)", "Communication with shareholders & product owners"],
+      title: [{ locale: 'en', text: "eGYM: Engineer's Gym" }, { locale: 'pt', text: "eGYM: Engineer's Gym" }], imageURL: "/assets/images/eGYM Languages.png",
+      description: [{ locale: 'en', text: "Reengineering of the previous “eGYM – Engineer's Gym” developed in 2018, aiming to achieve a better and more robust Learning Management System (LMS), allowing the possibility to integrate new concepts and new functionalities that could eliminate limitations from previous systems and met the new objectives proposed.\n\nContrary to the previous application developed in 2018, all services and micro services were deployed on a local Linux client, provided by Instituto Superior de Engenharia do Porto, using the institution DNS" },
+      { locale: 'pt', text: "Reengenharia do “eGYM – Engineer's Gym” desenvolvido em 2018, com o objetivo de alcançar um Learning Management System (LMS) mais robusto, permitindo a possibilidade de integração de novos conceitos e de novas funcionalidades que conseguissem eliminar as limitações dos sistemas anterior e cumprir os novos objetivos propostos.\n\nContrariamente à aplicação desenvolvida em 2018, todos os serviços e micro serviços foram implantados num servidor Linux, fornecido pelo Instituto Superior de Engenharia do Porto, utilizando o DNS da universidade." }],
+      activities: [{ locale: 'en', text: ["Analysis and architecture reengineering", "Web Development", "Database handling and maintenance", "Cloud implementation (Internal Linux Server)", "Communication with shareholders & product owners"] },
+      { locale: 'pt', text: ["Análise e reengenharia arquitetural", "Desenvolvimento Web", "Manutenção e controlo da base de dados", "Implantação na Cloud (Servidor Interno de Linux)", "Comunicação com o cliente & partes interessadas"] }],
       technologies: ["Angular", "HTML", "CSS", "Node.js", "Express.js", "REST", "Nginx", "Postman", "Scrum", "Git", "Mocha", "Chai.js", "Socket.IO", "CI/CD (Continuous Integration/Continuous Delivery"]
     },
     {
-      title: "Tire Communication Portal",
-      description: "Project with emphasis in web development where employees from different stations could communicate tire information and protocols, between each other, using Continental’s intranet.\n\nData handling, such as employee login credentials and tire information, was achieved using LDAP and Microsoft SQL Server, respectively. ",
-      activities: ["Analysis and architecture planning", "Web Development", "Database handling and maintenance", "Communication with shareholders & product owners"],
+      title: [{ locale: 'en', text: "Tire Communication Portal" }, { locale: "pt", text: "Portal de Comunicação de Pneus" }],
+      description: [{ locale: 'en', text: "Project with emphasis in web development of a portal where employees from different stations and hierarchies could communicate tire information and protocols, between each other, using Continental’s intranet.\n\nData handling, such as employee login credentials and tire information, was achieved using LDAP and Microsoft SQL Server, respectively. " },
+      { locale: 'pt', text: "Projecto com ênfase no desenvolvimento web de um portal onde os funcionários de diferentes postos e hierarquias podiam comunicar todas as informações e os protocolos de pneus, entre si, utilizando a rede interna da Continental.\n\nO tratamento de dados, tais como credenciais de login e todas as informações sobre os pneus, foi conseguido através da utilização do LDAP e do Microsoft SQL Server, respetivamente." }],
+      activities: [{ locale: 'en', text: ["Analysis and architecture design", "Web Development", "Database handling and maintenance", "Communication with shareholders & product owners"] },
+      { locale: 'pt', text: ["Análise e desenho arquitetural", "Desenvolvimento Web", "Manutenção e controlo da base de dados", "Comunicação com o cliente & partes interessadas"] }],
       technologies: ["PHP", "JavaScript", "HTML", "CSS", "Microsoft SQL Server"]
     },
     {
-      title: "eGYM: Engineer's Gym", imageURL: "/assets/images/eGYM PESTI.png",
-      description: "“eGYM – Engineer's Gym” project aimed to develop a web platform that promoted the critical thinking of students attending Engineering courses, through the availability of numerous and diverse content and activities, such as virtual classes and games.\n\nThe architecture designed and implemented was based on the renown MVC pattern. For this specific project two main applications were developed, known as Front Office and Back Office. The first one was the application where students could consume the various content and activities and the latter was the application where the teachers and administrators could manage both students and content available. To support those two applications, multiple micro services APIs were developed to handle all the communication between clients and servers, using REST and HTTPs. Both applications and services were deployed on the cloud, using Microsoft Azure.",
-      activities: ["Analysis and architecture planning", "Web Development", "Database handling and maintenance", "Cloud implementation (Microsoft Azure Server)", "Communication with shareholders & product owners"],
+      title: [{ locale: 'en', text: "eGYM: Engineer's Gym" }, { locale: 'pt', text: "eGYM: Engineer's Gym" }], imageURL: "/assets/images/eGYM PESTI.png",
+      description: [{ locale: 'en', text: "“eGYM – Engineer's Gym” project aimed to develop a web platform that promoted the critical thinking of students attending Engineering courses, through the availability of numerous and diverse content and activities, such as virtual classes and games.\n\nThe architecture designed and implemented was based on the renown MVC pattern. For this specific project two main applications were developed, known as Front Office and Back Office.\n\nThe first one was the application where students could consume the various content and activities and the latter was the application where the teachers and administrators could manage both students and content available.\n\nTo support those two applications, multiple micro services APIs were developed to handle all the communication between clients and servers, using REST and HTTPs. Both applications and services were deployed on the cloud, using Microsoft Azure." },
+      { locale: 'pt', text: "“eGYM – Engineer's Gym” visava desenvolver uma plataforma web que promovesse o pensamento crítico dos estudantes que frequentassem os cursos de Engenharia, através da disponibilização de diversos e numerosos conteúdos e atividades, tais como video aulas e jogos virtuais.\n\nA arquitetura desenvolvida e implementada baseou-se no conhecido padrão MVC. Para este projeto específico, foram desenvolvidas duas aplicações principais, denominadas de Front Office e Back Office. A primeira era a aplicação onde os estudantes podiam consumir os diversos conteúdos e atividades, enquanto que a segunda era uma aplicação onde os professores e administradores do sistema podiam gerir tanto os estudantes como os conteúdos existentes.\n\nPara apoiar estas aplicações, foram desenvolvidas múltiplas APIs, para lidar com toda a comunicação entre o cliente e o servidor, utilizado pedidos REST e HTTPs. Tanto as aplicações como os serviços foram implantados na nuvem, através do Microsoft Azure." }],
+      activities: [{ locale: 'en', text: ["Analysis and architecture planning", "Web Development", "Database handling and maintenance", "Cloud implementation (Microsoft Azure Server)", "Communication with shareholders & product owners"] },
+      { locale: 'en', text: ["Análise e desenho arquitetural", "Desenvolvimento Web", "Manutenção e controlo da base de dados", "Implantação na Cloud (Microsoft Azure Server)", "Comunicação com o cliente & partes interessadas"] }],
       technologies: ["AngularJS", "Angular", "HTML", "CSS", "Node.js", "Express.js", "REST", "Microsoft Azure", "Postman", "Scrum", "Git", "Mocha", "Chai.js", "Socket.IO"]
     }
   ]
 
   currentExperiences: Experience[] = [
     {
-      type: "Master's Degree Internship", place: 'Instituto Superior de Engenharia do Porto', position: "Full Stack Web Developer", startDate: new Date('02/01/2020'), endDate: new Date('10/01/2020'),
-      description: "Master's degree internship where I tried to re engineer the previous developed 'eGYM: Engineer's Gym' in 2018.", workplaceAvatar: "https://recipp.ipp.pt/retrieve/31671", workplaceURL: "https://www.isep.ipp.pt",
+      type: [{ locale: 'en', text: "Master's Degree Internship" }, { locale: 'pt', text: "Estágio de Mestrado" }], place: 'Instituto Superior de Engenharia do Porto',
+      position: "Full Stack Web Developer", startDate: new Date('02/01/2020'), endDate: new Date('10/01/2020'),
+      description: [{ locale: 'en', text: "Masters internship focused on the reengineering of “eGYM – Engineer's Gym” developed in 2018." },
+      { locale: 'pt', text: "Estágio de Mestrado focado na reengenharia do sistema “eGYM – Engineer's Gym” já desenvolvido em 2018 na Licenciatura. " }], workplaceAvatar: "https://recipp.ipp.pt/retrieve/31671", workplaceURL: "https://www.isep.ipp.pt",
       projects: this.projects[0]
     },
     {
-      type: "Summer Internship", place: 'Continental Mabor', position: 'Full Stack Web Developer', startDate: new Date('06/01/2018'), endDate: new Date('08/01/2018'),
-      description: "Small summer internship, where I got the possibility to work on a professional environment and develop small projects.", workplaceAvatar: "https://pbs.twimg.com/profile_images/1065885011851780096/AXxPjeP4_400x400.jpg", workplaceURL: "https://www.continental.com/",
+      type: [{ locale: 'en', text: "Summer Internship" }, { locale: 'pt', text: 'Estágio de Verão' }], place: 'Continental Mabor',
+      position: 'Full Stack Web Developer', startDate: new Date('06/01/2018'), endDate: new Date('08/01/2018'),
+      description: [{ locale: 'en', text: "Short Summer internship, focused on smaller scale internal projects, with the intentional of gaining professional experience." },
+      { locale: 'pt', text: "Pequeno estágio de Verão, com um foco em projetos internos de menor escala, com a intenção de adquirir experência profissional." }], workplaceAvatar: "https://pbs.twimg.com/profile_images/1065885011851780096/AXxPjeP4_400x400.jpg", workplaceURL: "https://www.continental.com/",
       projects: this.projects[1]
     },
     {
-      type: "Bachelor's Degree Internship", place: 'Instituto Superior de Engenharia do Porto', position: "Full Stack Web Developer", startDate: new Date('02/01/2018'), endDate: new Date('09/01/2018'),
-      description: "Bachelor's degree internship, where I was able to work on a new and ambitious project called 'eGYM: Engineer's Gym'.", workplaceAvatar: "https://recipp.ipp.pt/retrieve/31671", workplaceURL: "https://www.isep.ipp.pt",
+      type: [{ locale: 'en', text: "Bachelor's Degree Internship" }, { locale: 'pt', text: "Estágio da Licenciatura" }], place: 'Instituto Superior de Engenharia do Porto',
+      position: "Full Stack Web Developer", startDate: new Date('02/01/2018'), endDate: new Date('09/01/2018'),
+      description: [{ locale: 'en', text: "nternship of the Degree, that paved way for the creation of a new and ambitious project called “eGYM – Engineer's Gym”." },
+      { locale: 'pt', text: "Estágio da Licenciatura, que abriu caminho à criação de um novo e ambicioso projeto denominado de “eGYM – Engineer's Gym”." }], workplaceAvatar: "https://recipp.ipp.pt/retrieve/31671", workplaceURL: "https://www.isep.ipp.pt",
       projects: this.projects[2]
     }
   ]
@@ -144,13 +174,15 @@ export class HomepageComponent implements OnInit {
   ]
 
   currentTech: TechnologiesGroup[] = [
-    { type: 'Programming Languages', tech: this.programmingTechnologies },
-    { type: 'Frameworks', tech: this.frameworkTechnologies },
-    { type: 'Databases', tech: this.databaseTechnologies },
-    { type: 'Operating Systems', tech: this.operatingSystemsTechnologies },
+    { type: [{ locale: 'en', text: 'Programming Languages' }, { locale: 'pt', text: "Linguagens de Programação" }], tech: this.programmingTechnologies },
+    { type: [{ locale: 'en', text: 'Frameworks' }, { locale: 'pt', text: "Frameworks" }], tech: this.frameworkTechnologies },
+    { type: [{ locale: 'en', text: 'Databases' }, { locale: 'pt', text: "Bases de Dados" }], tech: this.databaseTechnologies },
+    { type: [{ locale: 'en', text: 'Operating Systems' }, { locale: 'pt', text: "Sistemas Operativos" }], tech: this.operatingSystemsTechnologies },
   ]
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, @Inject(LOCALE_ID) locale: string) {
+    this.locale = locale;
+  }
 
   ngOnInit(): void {
   }
@@ -175,17 +207,41 @@ export class HomepageComponent implements OnInit {
     const dialogRef =
       this.dialog.open(DialogComponent, {
         data: {
-          project: projectInfo
+          title: projectInfo.title.find(x => x.locale === this.locale)!.text,
+          imageURL: projectInfo.imageURL,
+          description: projectInfo.description.find(x => x.locale === this.locale)!.text,
+          activities: projectInfo.activities.find(x => x.locale === this.locale)?.text,
+          technologies: projectInfo.technologies
         }
       });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
+
     });
   }
 
   scroll(element: HTMLElement): void {
     element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+  }
+
+  getDegree(d: Diplomas): string {
+    return d.degree.find(x => x.locale === this.locale)!.text;
+  }
+
+  getCourse(d: Diplomas): string {
+    return d.course.find(x => x.locale === this.locale)!.text;
+  }
+
+  getDiplomaDescription(d: Diplomas): string {
+    return d.description.find(x => x.locale === this.locale)!.text;
+  }
+
+  getExperienceDescription(e: Experience): string {
+    return e.description.find(x => x.locale === this.locale)!.text;
+  }
+
+  getTechType(t: TechnologiesGroup): string {
+    return t.type.find(x => x.locale === this.locale)!.text;
   }
 
 }

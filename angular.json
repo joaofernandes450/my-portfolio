@@ -14,11 +14,14 @@
         }
       },
       "i18n": {
-        "sourceLocale": "en-US",
+        "sourceLocale": {
+          "code": "en",
+          "baseHref": "https://joaofernandes450.github.io/my-portfolio/en"
+        },
         "locales": {
-          "pt-PT": {
+          "pt": {
             "translation": "src/locale/locale.pt.xlf",
-            "baseHref": "/pt"
+            "baseHref": "https://joaofernandes450.github.io/my-portfolio/pt"
           }
         }
       },

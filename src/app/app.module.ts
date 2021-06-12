@@ -1,9 +1,15 @@
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from "@angular/flex-layout";
+
+// Language
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(localePt);
+
+export function getCurentLocale(): string {
+  return localStorage.getItem('Language') || 'en';
+}
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -54,7 +60,7 @@ import { FooterComponent } from './footer/footer.component';
     MatDividerModule,
     MatDialogModule
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'en-US' }], 
+  providers: [{ provide: LOCALE_ID, useValue: getCurentLocale() }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

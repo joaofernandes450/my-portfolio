@@ -66,8 +66,8 @@
                             <div mat-card-avatar class="card-avatar"
                                 [ngStyle]="{'background-image':'url(' + d.institutionAvatar + ')'}"
                                 (click)="redirectInstitution(d.institutionURL)"></div>
-                            <mat-card-title i18n="education card header@@education-card-header">{{d.degree}} in
-                                {{d.course}}</mat-card-title>
+                            <mat-card-title i18n="education card header@@education-card-header">{{getDegree(d)}} in
+                                {{getCourse(d)}}</mat-card-title>
                             <mat-card-subtitle class="text-underline-ref"
                                 (click)="redirectInstitution(d.institutionURL)">
                                 {{d.institutionName}}</mat-card-subtitle>
@@ -80,7 +80,7 @@
                                     'dd/MM/yyyy'}}</b>
                             </p>
                             <p>
-                                {{d.description}}
+                                {{getDiplomaDescription(d)}}
                             </p>
                         </mat-card-content>
                         <mat-card-actions>
@@ -132,7 +132,7 @@
                                 <b i18n="experience card content position@@position">Position: {{d.position}}</b>
                             </p>
                             <p>
-                                {{d.description}}
+                                {{getExperienceDescription(d)}}
                             </p>
                         </mat-card-content>
                         <mat-card-actions>
@@ -168,7 +168,7 @@
                         <mat-card fxFlex *ngFor="let t of currentTech" class="mat-elevation-z0">
                             <mat-list>
                                 <div mat-subheader>
-                                    {{t.type}}
+                                    {{getTechType(t)}}
                                     <span class="spacer"></span>
                                     <mat-icon i18n-matTooltip matTooltip="Based on the following scale:&#13;
                                 5: Expert&#13;
@@ -233,7 +233,6 @@
                         <div fxFlex fxLayout="column" fxLayoutAlign="space-around center">
                             <p i18n="favorite-stack-description@@fav-stack-description">
                                 Since I had my first contact with web development and consequently with the technologies
-                                above
                                 represented, around my third year of graduation to be precise, that I have choosen to
                                 stick
                                 with
@@ -242,7 +241,8 @@
                             <p i18n="favorite-stack-angular-description@@fav-stack-angular-description">
                                 Angular was and remains a simple but rather strong framework that allows me to design
                                 and
-                                develop all of my SPAs in the best way possible. With the introduction of Angular Material and its strong ongoing
+                                develop all of my SPAs in the best way possible. With the introduction of Angular
+                                Material and its strong ongoing
                                 development, with new versions being pushed regurlary, that I see no motives to move on.
                             </p>
                             <p i18n="favorite-stack-node-description@@fav-stack-node-description">
