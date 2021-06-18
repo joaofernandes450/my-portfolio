@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="dialog-header" datatype="html">
+        <source>Context</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dialog/dialog.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">dialog context header</note>
+      </trans-unit>
+      <trans-unit id="dialog-activities" datatype="html">
+        <source>Activities</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dialog/dialog.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">dialog activities list</note>
+      </trans-unit>
+      <trans-unit id="dialog-technologies" datatype="html">
+        <source>Technologies</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/dialog/dialog.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <note priority="1" from="description">dialog technologies list</note>
+      </trans-unit>
       <trans-unit id="education-header" datatype="html">
         <source>Education</source>
         <context-group purpose="location">
@@ -19,7 +43,7 @@
         <note priority="1" from="description">education subheader</note>
       </trans-unit>
       <trans-unit id="education-card-header" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{d.degree}}"/> in <x id="INTERPOLATION_1" equiv-text="{{d.course}}"/></source>
+        <source><x id="INTERPOLATION" equiv-text="{{getDegree(d)}}"/> in <x id="INTERPOLATION_1" equiv-text="{{getCourse(d)}}"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
           <context context-type="linenumber">69,70</context>
@@ -89,7 +113,7 @@
         <note priority="1" from="description">technologies header</note>
       </trans-unit>
       <trans-unit id="technologies-subheader" datatype="html">
-        <source>Current knowledge</source>
+        <source>Current Knowledge</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
           <context context-type="linenumber">159</context>
@@ -109,34 +133,34 @@
         </context-group>
       </trans-unit>
       <trans-unit id="favorite-stack-header" datatype="html">
-        <source>Favorite Stack</source>
+        <source>Favorite Stack </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
-          <context context-type="linenumber">209</context>
+          <context context-type="linenumber">209,210</context>
         </context-group>
         <note priority="1" from="description">favorite stack header</note>
       </trans-unit>
       <trans-unit id="favorite-stack-subheader" datatype="html">
-        <source>Personal choice</source>
+        <source>Personal Choice</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
-          <context context-type="linenumber">210</context>
+          <context context-type="linenumber">211</context>
         </context-group>
         <note priority="1" from="description">favorite stack subheader</note>
       </trans-unit>
       <trans-unit id="fav-stack-description" datatype="html">
-        <source> Since I had my first contact with web development and consequently with the technologies above represented, around my third year of graduation to be precise, that I have choosen to stick with them in both academic and personal projects. </source>
+        <source> Since I had my first contact with web development and consequently with the technologies represented, around my third year of graduation to be precise, that I have choosen to stick with them in both academic and personal projects. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
-          <context context-type="linenumber">235,241</context>
+          <context context-type="linenumber">237,242</context>
         </context-group>
         <note priority="1" from="description">favorite-stack-description</note>
       </trans-unit>
       <trans-unit id="fav-stack-angular-description" datatype="html">
-        <source> Angular was and remains a simple but rather strong framework that allows me to design and develop all of my SPAs. With the introduction of Angular Material and its strong ongoing development, with new versions being pushed regurlary, that I see no motives to move on. </source>
+        <source> Angular was and remains a simple but rather strong framework that allows me to design and develop all of my SPAs in the best way possible. With the introduction of Angular Material and its strong ongoing development, with new versions being pushed regurlary, that I see no motives to move on. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
-          <context context-type="linenumber">243,247</context>
+          <context context-type="linenumber">244,249</context>
         </context-group>
         <note priority="1" from="description">favorite-stack-angular-description</note>
       </trans-unit>
@@ -144,41 +168,24 @@
         <source> Node.js was at the time the chosen backend framework lectured and paired with Angular in our web development. Thanks to its flexibility, scalability and with NPM around I feel that Node.js is the best all around option for my backend development. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
-          <context context-type="linenumber">249,253</context>
+          <context context-type="linenumber">251,255</context>
         </context-group>
         <note priority="1" from="description">favorite-stack-node-description</note>
       </trans-unit>
       <trans-unit id="fav-stack-mongo-description" datatype="html">
-        <source> MongoDB at the time represented a new concept of mechanism of storage and retrieval of data, since it wasn&apos;t based on the common relational databases. But soon enough I found how powerful and fast MongoDB was. Plus the ease of communication between MongoDB and Nodejs, using documents with structure similar to JSON, is a big plus.</source>
+        <source> MongoDB at the time represented a new concept of mechanism of storage and retrieval of data, since it wasn&apos;t based on the common relational databases. But soon enough I found how powerful and fast MongoDB was. Plus the ease of communication between MongoDB and Node.js, using documents with structure similar to JSON, is a big plus.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/homepage/homepage.component.html</context>
-          <context context-type="linenumber">255,261</context>
+          <context context-type="linenumber">257,263</context>
         </context-group>
         <note priority="1" from="description">favorite-stack-mongo-description</note>
       </trans-unit>
-      <trans-unit id="dialog-header" datatype="html">
-        <source>Context</source>
+      <trans-unit id="download-cv" datatype="html">
+        <source>Download CV</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dialog/dialog.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="sourcefile">src/app/components/navigation-bar/navigation-bar.component.html</context>
+          <context context-type="linenumber">49,50</context>
         </context-group>
-        <note priority="1" from="description">dialog context header</note>
-      </trans-unit>
-      <trans-unit id="dialog-activities" datatype="html">
-        <source>Activities</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dialog/dialog.component.html</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-        <note priority="1" from="description">dialog activities list</note>
-      </trans-unit>
-      <trans-unit id="dialog-technologies" datatype="html">
-        <source>Technologies</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dialog/dialog.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-        <note priority="1" from="description">dialog technologies list</note>
       </trans-unit>
     </body>
   </file>
